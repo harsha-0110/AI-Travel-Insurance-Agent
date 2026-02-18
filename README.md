@@ -1,4 +1,3 @@
-
 # 🛡️ AI Travel Insurance Agent
 
 A full-stack, multi-agent Retrieval-Augmented Generation (RAG) application that acts as a Travel Insurance Advisor. 
@@ -30,8 +29,8 @@ Before you begin, ensure you have the following installed:
 ## 🛠️ Backend Setup (FastAPI + LangGraph)
 
 1. **Navigate to the backend directory:**
-   ```bash
-   cd backend
+```bash
+cd backend
 
 ```
 
@@ -160,7 +159,3 @@ Try asking the agent different types of questions to see the multi-agent routing
 * **AI & Orchestration:** LangChain, LangGraph
 * **Vector Database:** FAISS
 * **Embeddings & LLMs:** OpenAI, Ollama
-
-```
-
-```
