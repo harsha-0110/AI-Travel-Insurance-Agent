@@ -1,12 +1,11 @@
-from langchain.tools import Tool
+from langchain_core.tools import Tool
 from app.rag.retriever import get_retriever
 
 retriever = get_retriever()
 
 def retrieve_policy_info(query: str):
-    docs = retriever.get_relevant_documents(query)
+    docs = retriever.invoke(query)
     return "\n\n".join([doc.page_content for doc in docs])
-
 
 policy_tool = Tool(
     name="PolicyRetriever",
