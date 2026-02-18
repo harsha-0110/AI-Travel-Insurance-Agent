@@ -1,9 +1,20 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from langchain_core.messages import HumanMessage
 from app.agent.agent_executor import get_agent
 
 app = FastAPI()
+
+# --- NEW: Add CORS Middleware ---
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"], # In production, replace "*" with your React app's URL
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+# --------------------------------
 
 # Initialize the Multi-Agent Graph
 agent = get_agent()
