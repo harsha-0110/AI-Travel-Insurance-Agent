@@ -1,0 +1,37 @@
+Policy Name: Standard Explorer Travel Insurance
+
+Overview:
+Balanced coverage plan suitable for families and business travelers.
+
+Coverage Details:
+
+1. Medical Emergency:
+   - Coverage up to $75,000
+   - Includes emergency dental treatment up to $1,000
+   - Covers acute onset of pre-existing conditions
+
+2. Trip Cancellation:
+   - Coverage up to $5,000
+   - Covers illness, job loss, airline bankruptcy
+
+3. Trip Delay:
+   - $150 per 6 hours delay
+   - Maximum $1,000
+
+4. Lost or Delayed Baggage:
+   - Coverage up to $1,500
+
+5. Personal Liability:
+   - Coverage up to $50,000
+
+6. Emergency Evacuation:
+   - Coverage up to $100,000
+
+Exclusions:
+- Extreme sports
+- Cosmetic treatments abroad
+
+Claim Procedure:
+- Notify insurer within 48 hours
+- Upload supporting documents through online portal
+- Settlement within 7–12 business days
