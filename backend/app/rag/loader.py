@@ -1,14 +1,15 @@
-from langchain_community.document_loaders import TextLoader
 import os
+from langchain_community.document_loaders import PyPDFDirectoryLoader
 
 def load_policy_documents():
-
-    docs = []
     base_path = "app/policies"
+    
+    # Check if the directory exists to avoid errors
+    if not os.path.exists(base_path):
+        os.makedirs(base_path)
 
-    for file in os.listdir(base_path):
-        if file.endswith(".txt"):
-            loader = TextLoader(os.path.join(base_path, file))
-            docs.extend(loader.load())
-
+    # PyPDFDirectoryLoader dynamically loads all PDFs in the folder
+    loader = PyPDFDirectoryLoader(base_path)
+    docs = loader.load()
+    
     return docs

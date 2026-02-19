@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useMemo } from "react"; // <-- Added useMemo
 import "./App.css";
 
 function App() {
@@ -9,7 +9,9 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const chatEndRef = useRef(null);
 
-  // Auto-scroll to the bottom when new messages arrive
+  // --- NEW: Generate a random session ID once when the page loads ---
+  const sessionId = useMemo(() => Math.random().toString(36).substring(2, 10), []);
+
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
@@ -27,7 +29,10 @@ function App() {
       const response = await fetch("http://127.0.0.1:8000/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: userMessage.text }),
+        body: JSON.stringify({ 
+            message: userMessage.text,
+            session_id: sessionId // <-- NEW: Send the session ID to the backend
+        }),
       });
 
       if (!response.ok) {
